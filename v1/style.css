@@ -1,8 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap");
 /* Тема страниц смоуков (06.10.2026, вторая редакция). Слово Владельца:
    «я имел в виду элементы и цвета, не лэйаут». Строй страниц — прежний;
    от образца взяты только цвета, шрифт и вид элементов (кнопки, карточки,
    «бровь», таблица, аккордеон, шапка, подвал). Значения сняты с образца
-   (вычисленные стили, переведены в hex). Код свой, внешних шрифтов нет. */
+   (вычисленные стили, переведены в hex). Код свой; шрифт IBM Plex Sans — с Google Fonts (с 20.11.2026). */
 :root{
   --bg:#fcfcfc;            /* фон */
   --ink:#05080b;           /* текст */
@@ -134,3 +135,35 @@ footer.site-foot{background:var(--ink)}
 @media (max-width:480px){
   .wrap{padding:0 16px}
 }
+
+/* === Образец дизайна Смоков на страницах прежнего строя: экран цен, экран оплаты, политика (слово Владельца
+   11.11.2026 «1а» — тем же стилем, без смены текста и событий). Настройками темы (СМ-45): те же переменные, новые
+   значения из «Образца дизайна»; главную нового строя (main.shell) этот блок не задевает — её ведёт variant.css. === */
+body:not(:has(main.shell)){
+  --bg:#fbfcfd;--ink:#0a1524;--muted:#566174;--line:#dde2ea;--card:#ffffff;--alt:#eef2f7;
+  --accent:#12397a;--accent-soft:#dfe8f7;--accent-num:#12397a;--navy:#0d2247;
+  --radius:.625rem;--radius-lg:1rem;--radius-tbl:1rem;
+  background:var(--bg);color:var(--ink);
+  font:400 1.0625rem/1.6 "IBM Plex Sans","Segoe UI",system-ui,sans-serif;
+}
+body:not(:has(main.shell)) header{background:rgba(251,252,253,.86);backdrop-filter:blur(12px)}
+body:not(:has(main.shell)) .logo,body:not(:has(main.shell)) .brand{font-weight:600;letter-spacing:0}
+body:not(:has(main.shell)) .brand .mark{display:none}
+body:not(:has(main.shell)) nav.top a{color:var(--muted)}
+body:not(:has(main.shell)) nav.top a:hover{color:var(--ink)}
+body:not(:has(main.shell)) h1{font-size:clamp(2.25rem,5vw,3.25rem);line-height:1.1;font-weight:600;letter-spacing:-.03em}
+body:not(:has(main.shell)) .page h1{font-size:clamp(2rem,4vw,2.75rem)}
+body:not(:has(main.shell)) h2{font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.15;font-weight:600;letter-spacing:-.02em}
+body:not(:has(main.shell)) .doc h2{font-size:1.375rem;letter-spacing:-.01em}
+body:not(:has(main.shell)) h3{font-weight:600;letter-spacing:-.01em}
+body:not(:has(main.shell)) .sub,body:not(:has(main.shell)) .lead{font-size:1.125rem;line-height:1.6}
+body:not(:has(main.shell)) .eyebrow{padding:0;border-radius:0;background:transparent;color:var(--muted);font-size:.8125rem;letter-spacing:.02em;text-transform:none}
+body:not(:has(main.shell)) a.cta,body:not(:has(main.shell)) .btn{border-radius:var(--radius)}
+body:not(:has(main.shell)) .card{box-shadow:0 20px 40px -15px rgba(0,0,0,.05)}
+body:not(:has(main.shell)) .card > b{font-weight:600;letter-spacing:-.01em}
+body:not(:has(main.shell)) .price{font-weight:600}
+body:not(:has(main.shell)) .doc p{color:#2a3649}
+body:not(:has(main.shell)) select:focus{outline-color:#2f6fd6}
+body:not(:has(main.shell)) footer,body:not(:has(main.shell)) footer.site-foot{background:var(--alt);color:var(--ink);border-top:1px solid var(--line)}
+body:not(:has(main.shell)) footer a{color:var(--ink)}
+body:not(:has(main.shell)) footer .muted{color:var(--muted)}
